@@ -13,43 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.shyiko.mysql.binlog;
+// package com.github.shyiko.mysql.binlog;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+// import java.util.logging.Level;
+// import java.util.logging.Logger;
 
-/**
- * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
- */
-public class TraceLifecycleListener implements BinaryLogClient.LifecycleListener {
+// /**
+//  * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
+//  */
+// public class TraceLifecycleListener implements BinaryLogClient.LifecycleListener {
 
-    private final Logger logger = Logger.getLogger(getClass().getSimpleName());
+//     private final Logger logger = Logger.getLogger(getClass().getSimpleName());
 
-    @Override
-    public void onConnect(BinaryLogClient client) {
-        if (logger.isLoggable(Level.INFO)) {
-            logger.log(Level.INFO, "Connected");
-        }
-    }
+//     @Override
+//     public void onConnect(BinaryLogClient client) {
+//         if (logger.isLoggable(Level.INFO)) {
+//             logger.log(Level.INFO, "Connected");
+//         }
+//     }
 
-    @Override
-    public void onCommunicationFailure(BinaryLogClient client, Exception ex) {
-        if (logger.isLoggable(Level.SEVERE)) {
-            logger.log(Level.SEVERE, "Communication failed", ex);
-        }
-    }
+//     @Override
+//     public void onCommunicationFailure(BinaryLogClient client, Exception ex) {
+//         if (logger.isLoggable(Level.SEVERE)) {
+//             logger.log(Level.SEVERE, "Communication failed", ex);
+//         }
+//     }
 
-    @Override
-    public void onEventDeserializationFailure(BinaryLogClient client, Exception ex) {
-        if (logger.isLoggable(Level.SEVERE)) {
-            logger.log(Level.SEVERE, "Event deserialization failed", ex);
-        }
-    }
+//     @Override
+//     public void onEventDeserializationFailure(BinaryLogClient client, Exception ex) {
+//         if (logger.isLoggable(Level.SEVERE)) {
+//             logger.log(Level.SEVERE, "Event deserialization failed", ex);
+//         }
+//     }
 
-    @Override
-    public void onDisconnect(BinaryLogClient client) {
-        if (logger.isLoggable(Level.INFO)) {
-            logger.log(Level.INFO, "Disconnected");
-        }
-    }
-}
+//     @Override
+//     public void onDisconnect(BinaryLogClient client) {
+//         if (logger.isLoggable(Level.INFO)) {
+//             logger.log(Level.INFO, "Disconnected");
+//         }
+//     }
+// }

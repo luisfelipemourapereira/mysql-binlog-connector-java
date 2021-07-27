@@ -13,34 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.shyiko.mysql.binlog.jmx;
+// package com.github.shyiko.mysql.binlog.jmx;
 
-import com.github.shyiko.mysql.binlog.BinaryLogClient;
-import org.junit.Test;
+// import com.github.shyiko.mysql.binlog.BinaryLogClient;
+// import org.junit.Test;
 
-import javax.management.MBeanServer;
-import javax.management.ObjectName;
-import java.lang.management.ManagementFactory;
+// import javax.management.MBeanServer;
+// import javax.management.ObjectName;
+// import java.lang.management.ManagementFactory;
 
-import static org.testng.Assert.assertEquals;
+// import static org.testng.Assert.assertEquals;
 
-/**
- * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
- */
-public class BinaryLogClientStatisticsMXBeanTest {
+// /**
+//  * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
+//  */
+// public class BinaryLogClientStatisticsMXBeanTest {
 
-    @Test
-    public void testRegistration() throws Exception {
-        MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
-        BinaryLogClient binaryLogClient = new BinaryLogClient("localhost", 3306, "root", "mysql");
-        BinaryLogClientStatistics binaryLogClientStats = new BinaryLogClientStatistics(binaryLogClient);
-        ObjectName objectName = new ObjectName("mysql.binlog:type=BinaryLogClientStatistics");
-        mBeanServer.registerMBean(binaryLogClientStats, objectName);
-        try {
-            assertEquals(mBeanServer.getAttribute(objectName, "TotalNumberOfEventsSeen"), 0L);
-        } finally {
-            mBeanServer.unregisterMBean(objectName);
-        }
-    }
+//     @Test
+//     public void testRegistration() throws Exception {
+//         MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
+//         BinaryLogClient binaryLogClient = new BinaryLogClient("localhost", 3306, "root", "mysql");
+//         BinaryLogClientStatistics binaryLogClientStats = new BinaryLogClientStatistics(binaryLogClient);
+//         ObjectName objectName = new ObjectName("mysql.binlog:type=BinaryLogClientStatistics");
+//         mBeanServer.registerMBean(binaryLogClientStats, objectName);
+//         try {
+//             assertEquals(mBeanServer.getAttribute(objectName, "TotalNumberOfEventsSeen"), 0L);
+//         } finally {
+//             mBeanServer.unregisterMBean(objectName);
+//         }
+//     }
 
-}
+// }

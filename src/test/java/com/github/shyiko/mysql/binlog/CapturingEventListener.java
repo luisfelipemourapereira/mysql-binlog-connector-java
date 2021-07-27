@@ -13,41 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.shyiko.mysql.binlog;
+// package com.github.shyiko.mysql.binlog;
 
-import com.github.shyiko.mysql.binlog.event.Event;
-import com.github.shyiko.mysql.binlog.event.EventData;
+// import com.github.shyiko.mysql.binlog.event.Event;
+// import com.github.shyiko.mysql.binlog.event.EventData;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.LinkedList;
+// import java.util.List;
 
-/**
- * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
- */
-public class CapturingEventListener extends CountDownEventListener {
+// /**
+//  * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
+//  */
+// public class CapturingEventListener extends CountDownEventListener {
 
-    private final List<Event> events = new LinkedList<Event>();
+//     private final List<Event> events = new LinkedList<Event>();
 
-    @Override
-    public void onEvent(Event event) {
-        synchronized (events) {
-            events.add(event);
-            super.onEvent(event);
-        }
-    }
+//     @Override
+//     public void onEvent(Event event) {
+//         synchronized (events) {
+//             events.add(event);
+//             super.onEvent(event);
+//         }
+//     }
 
-    @SuppressWarnings("unchecked")
-    public <E extends EventData> List<E> getEvents(Class<E> eventDataType) {
-        List<E> result = new ArrayList<E>();
-        synchronized (events) {
-            for (Event event : events) {
-                EventData eventData = event.getData();
-                if (eventDataType.isInstance(eventData)) {
-                    result.add((E) eventData);
-                }
-            }
-        }
-        return result;
-    }
-}
+//     @SuppressWarnings("unchecked")
+//     public <E extends EventData> List<E> getEvents(Class<E> eventDataType) {
+//         List<E> result = new ArrayList<E>();
+//         synchronized (events) {
+//             for (Event event : events) {
+//                 EventData eventData = event.getData();
+//                 if (eventDataType.isInstance(eventData)) {
+//                     result.add((E) eventData);
+//                 }
+//             }
+//         }
+//         return result;
+//     }
+// }

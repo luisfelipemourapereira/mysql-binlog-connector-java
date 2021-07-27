@@ -13,33 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.shyiko.mysql.binlog.jmx;
+// package com.github.shyiko.mysql.binlog.jmx;
 
-import com.github.shyiko.mysql.binlog.BinaryLogClient;
-import org.testng.annotations.Test;
+// import com.github.shyiko.mysql.binlog.BinaryLogClient;
+// import org.testng.annotations.Test;
 
-import javax.management.MBeanServer;
-import javax.management.ObjectName;
-import java.lang.management.ManagementFactory;
+// import javax.management.MBeanServer;
+// import javax.management.ObjectName;
+// import java.lang.management.ManagementFactory;
 
-import static org.testng.Assert.assertEquals;
+// import static org.testng.Assert.assertEquals;
 
-/**
- * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
- */
-public class BinaryLogClientMXBeanTest {
+// /**
+//  * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
+//  */
+// public class BinaryLogClientMXBeanTest {
 
-    @Test
-    public void testRegistration() throws Exception {
-        MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
-        BinaryLogClient binaryLogClient = new BinaryLogClient("localhost", 3306, "root", "mysql");
-        ObjectName objectName = new ObjectName("mysql.binlog:type=BinaryLogClient");
-        mBeanServer.registerMBean(binaryLogClient, objectName);
-        try {
-            assertEquals(mBeanServer.getAttribute(objectName, "Connected"), Boolean.FALSE);
-        } finally {
-            mBeanServer.unregisterMBean(objectName);
-        }
-    }
+//     @Test
+//     public void testRegistration() throws Exception {
+//         MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
+//         BinaryLogClient binaryLogClient = new BinaryLogClient("localhost", 3306, "root", "mysql");
+//         ObjectName objectName = new ObjectName("mysql.binlog:type=BinaryLogClient");
+//         mBeanServer.registerMBean(binaryLogClient, objectName);
+//         try {
+//             assertEquals(mBeanServer.getAttribute(objectName, "Connected"), Boolean.FALSE);
+//         } finally {
+//             mBeanServer.unregisterMBean(objectName);
+//         }
+//     }
 
-}
+// }

@@ -17,7 +17,6 @@ package com.github.shyiko.mysql.binlog.event.deserialization;
 
 import com.github.shyiko.mysql.binlog.event.EventData;
 import com.github.shyiko.mysql.binlog.io.ByteArrayInputStream;
-
 import java.io.IOException;
 
 /**
@@ -26,5 +25,5 @@ import java.io.IOException;
  */
 public interface EventDataDeserializer<T extends EventData> {
 
-    T deserialize(ByteArrayInputStream inputStream) throws IOException;
+  T deserialize(ByteArrayInputStream inputStream) throws IOException;
 }

@@ -17,18 +17,15 @@ package com.github.shyiko.mysql.binlog.event.deserialization;
 
 import com.github.shyiko.mysql.binlog.event.XidEventData;
 import com.github.shyiko.mysql.binlog.io.ByteArrayInputStream;
-
 import java.io.IOException;
 
-/**
- * @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a>
- */
+/** @author <a href="mailto:stanley.shyiko@gmail.com">Stanley Shyiko</a> */
 public class XidEventDataDeserializer implements EventDataDeserializer<XidEventData> {
 
-    @Override
-    public XidEventData deserialize(ByteArrayInputStream inputStream) throws IOException {
-        XidEventData eventData = new XidEventData();
-        eventData.setXid(inputStream.readLong(8));
-        return eventData;
-    }
+  @Override
+  public XidEventData deserialize(ByteArrayInputStream inputStream) throws IOException {
+    XidEventData eventData = new XidEventData();
+    eventData.setXid(inputStream.readLong(8));
+    return eventData;
+  }
 }

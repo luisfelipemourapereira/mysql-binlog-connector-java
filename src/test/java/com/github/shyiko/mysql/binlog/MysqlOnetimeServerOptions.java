@@ -1,8 +1,8 @@
-package com.github.shyiko.mysql.binlog;
+// package com.github.shyiko.mysql.binlog;
 
-public class MysqlOnetimeServerOptions {
-    public int serverID = MysqlOnetimeServer.nextServerID++;
-    public boolean gtid = false;
-    public MysqlOnetimeServer masterServer;
-    public String extraParams;
-}
+// public class MysqlOnetimeServerOptions {
+//     public int serverID = MysqlOnetimeServer.nextServerID++;
+//     public boolean gtid = false;
+//     public MysqlOnetimeServer masterServer;
+//     public String extraParams;
+// }
